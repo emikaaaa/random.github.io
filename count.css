@@ -1,0 +1,162 @@
+#Kou1{
+    float: left;
+    padding:10px;
+    
+}
+
+#Kou2{
+    float: left;
+    padding:10px;
+    margin-left:185px;
+    position: absolute;
+    }
+#Kou3{
+    float: left;
+    padding:10px;
+    margin-left:370px;
+    position: absolute;
+    }
+#Dai1{
+    float: left;
+    padding:10px;
+    margin-left:555px;
+    position: absolute;
+    }
+    
+#Dai2{
+    float: left;
+    padding:10px;
+    margin-left:740px;
+    position: absolute;
+    }
+#Dai3{
+    float: left;
+    padding:10px;
+    margin-left:925px;
+    position: absolute;
+    }
+
+#empty{
+    width:1000px;
+    height: 10px;
+
+
+}
+#wariatechan{
+    font-size: 50px;
+}
+
+body{
+    background-image : url(yama.png);
+}
+#ListKou1{
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#ffb03c, #ff708d);
+    background: -webkit-linear-gradient(#ffb03c, #ff708d);
+    background: linear-gradient(to right, #ffb03c, #ff708d);
+    color: #FFF;
+}
+#ListKou1 p {
+    margin: 0; 
+    padding: 0;
+}
+#ListKou2{
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#ffb03c, #ff708d);
+    background: -webkit-linear-gradient(#ffb03c, #ff708d);
+    background: linear-gradient(to right, #ffb03c, #ff708d);
+    color: #FFF;
+}
+#ListKou2 p {
+    margin: 0; 
+    padding: 0;
+}
+
+#ListKou3{
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#ffb03c, #ff708d);
+    background: -webkit-linear-gradient(#ffb03c, #ff708d);
+    background: linear-gradient(to right, #ffb03c, #ff708d);
+    color: #FFF;
+}
+#ListKou3 p {
+    margin: 0; 
+    padding: 0;
+}
+#ListKou4{
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#ffb03c, #ff708d);
+    background: -webkit-linear-gradient(#ffb03c, #ff708d);
+    background: linear-gradient(to right, #ffb03c, #ff708d);
+    color: #FFF;
+}
+#ListKou4 p {
+    margin: 0; 
+    padding: 0;
+}
+#ListKou5{
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#ffb03c, #ff708d);
+    background: -webkit-linear-gradient(#ffb03c, #ff708d);
+    background: linear-gradient(to right, #ffb03c, #ff708d);
+    color: #FFF;
+}
+#ListKou5 p {
+    margin: 0; 
+    padding: 0;
+}
+
+#ListKou6{
+    padding: 0.5em 1em;
+    background: -moz-linear-gradient(#ffb03c, #ff708d);
+    background: -webkit-linear-gradient(#ffb03c, #ff708d);
+    background: linear-gradient(to right, #ffb03c, #ff708d);
+    color: #FFF;
+}
+#ListKou6 p {
+    margin: 0; 
+    padding: 0;
+}
+h2 {
+    background: #b0dcfa; /*背景色*/
+    padding: 0.1em;/*文字周りの余白*/
+    color: white;/*文字を白に*/
+    border-radius: 0.5em;/*角の丸み*/
+    margin: 0.1em;
+    width:100px;
+    text-align:center
+    }
+
+#groupMatome{
+    position:absolute;
+    margin-top: 300px;
+}
+img{
+    height:30px;
+    width:30px;
+}
+.wf-nicomoji { font-family: "Nico Moji"; }
+
+.square_btn {
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #fd9535;/*背景色*/
+    border-bottom: solid 2px #d27d00;/*少し濃い目の色に*/
+    border-radius: 4px;/*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+    font-weight: bold;
+}
+
+.square_btn:active {
+    border-bottom: solid 2px #fd9535;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+#empty{
+    margin:60px;
+
+    font-size: 2em;
+}

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>確認</title>
+<meta charset="UTF-8">
+</head>
+<body>
+ <h1 class="wf-nicomoji" id="wariatechan">じどうわりあてチャン</h1>
+<div id="Kou1">
+    <h2>高校１</h2>
+        <input type="text" id="InputKou1" >
+       <br>
+        <input type="button" value="追加" id="AddKou1">
+        <br>
+        <textarea  cols="20" rows="6" id="ListKou1" readonly></textarea>
+        <br>
+        <input type="button" value="消す！" id="DeleteKou1">
+        <br>
+        <div id="count"></div>
+        <br>
+        <input type="button" value="割り当て" class="square_btn">
+
+</div>
+
+<div id="Kou2">
+    <h2>高校２</h2>
+        <input type="text" id="InputKou2" >
+       <br>
+        <input type="button" value="追加" id="AddKou2">
+        <br>
+        <textarea  cols="20" rows="6" id="ListKou2" readonly></textarea>
+        <br>
+        <input type="button" value="消す！" id="DeleteKou2">
+        <br>
+        <div id="count2" ></div>
+</div>
+<div id="Kou3">
+    <h2>高校３</h2>
+        <input type="text" id="InputKou3" >
+       <br>
+        <input type="button" value="追加" id="AddKou3">
+        <br>
+        <textarea  cols="20" rows="6" id="ListKou3" readonly></textarea>
+        <br>
+        <input type="button" value="消す！" id="DeleteKou3">
+        <br>
+        <div id="count3" ></div>
+        <br>
+</div>
+ 
+<div id="Dai1">
+    <h2>大学１</h2>
+        <input type="text" id="InputKou4" >
+       <br>
+        <input type="button" value="追加" id="AddKou4">
+        <br>
+        <textarea  cols="20" rows="6" id="ListKou4" readonly></textarea>
+        <br>
+        <input type="button" value="消す！" id="DeleteKou4">
+        <br>
+        <div id="count4" ></div>
+        <br>
+</div>
+<div id="Dai2">
+    <h2>大学２</h2>
+        <input type="text" id="InputKou5" >
+       <br>
+        <input type="button" value="追加" id="AddKou5">
+        <br>
+        <textarea  cols="20" rows="6" id="ListKou5" readonly></textarea>
+        <br>
+        <input type="button" value="消す！" id="DeleteKou5">
+        <br>
+        <div id="count5" ></div>
+        <br>
+</div>
+<div id="Dai3">
+    <h2>大学３</h2>
+        <input type="text" id="InputKou6" >
+       <br>
+        <input type="button" value="追加" id="AddKou6">
+        <br>
+        <textarea  cols="20" rows="6" id="ListKou6" readonly></textarea>
+        <br>
+        <input type="button" value="消す！" id="DeleteKou6">
+        <br>
+        <div id="count6" ></div>
+        <br>
+</div>
+ 
+        <div id="empty1"></div>
+
+<div id="groupMatome">
+<div id="group1"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ１</h1></div>
+<div id="group2"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ２</h1></div>
+<div id="group3"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ３</h1></div>
+<div id="group4"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ４</h1></div>
+<div id="group5"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ５</h1></div>
+
+</div>
+        <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+        <script type="text/javascript">   
+$(loaded);
+
+function loaded() {
+
+    $("#AddKou1").click( //高1のリストに文字列が入る
+      function() {
+     AddStringToTextarea();
+      });
+      $("#DeleteKou1").click( //高１のリストとその分のlocalstrorageが消える
+      function() {
+     Delete();
+      });
+      $("#AddKou2").click( //高２のリストに文字列が入る
+      function() {
+     AddStringToTextarea2();
+      });
+      $("#DeleteKou2").click( //高２のリストとその分のlocalstrorageが消える
+      function() {
+     Delete2();
+      });
+      $("#AddKou3").click( //高２のリストに文字列が入る
+      function() {
+     AddStringToTextarea3();
+      });
+      $("#DeleteKou3").click( //高２のリストとその分のlocalstrorageが消える
+      function() {
+     Delete3();
+      });
+      $("#AddKou4").click( //高２のリストに文字列が入る
+      function() {
+     AddStringToTextarea4();
+      });
+      $("#DeleteKou4").click( //高２のリストとその分のlocalstrorageが消える
+      function() {
+     Delete4();
+      });
+      $("#AddKou5").click( //高２のリストに文字列が入る
+      function() {
+     AddStringToTextarea5();
+      });
+      $("#DeleteKou5").click( //高２のリストとその分のlocalstrorageが消える
+      function() {
+     Delete5();
+      });
+      $("#AddKou6").click( //高２のリストに文字列が入る
+      function() {
+     AddStringToTextarea6();
+      });
+      $("#DeleteKou6").click( //高２のリストとその分のlocalstrorageが消える
+      function() {
+     Delete6();
+      });
+      $(".square_btn").click( //割り当てる
+      function() {
+        document.getElementById("InputKou1").value="";
+        document.getElementById("InputKou2").value="";
+        document.getElementById("InputKou3").value="";
+        document.getElementById("InputKou4").value="";
+        document.getElementById("InputKou5").value="";
+        document.getElementById("InputKou6").value="";
+          localStorage.clear;
+
+          $('#group1').remove();
+          $('#group2').remove();
+          $('#group3').remove();
+          $('#group4').remove();
+          $('#group5').remove();
+          $('#group6').remove();
+          $('#groupMatome').append('<div id="group1"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ１</h1></div><div id="group2"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ２</h1></div><div id="group3"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ３</h1></div><div id="group4"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ４</h1></div><div id="group5"><h1 class="wf-nicomoji"><img src="猫のシルエット.png">グループ５</h1></div>');
+          AddStringToTextarea();
+          AddStringToTextarea2();
+          AddStringToTextarea3();
+          AddStringToTextarea4();
+          AddStringToTextarea5();
+          AddStringToTextarea6();
+     Wariate();
+      });
+
+  }
+
+function Delete(){
+    var key2 = localStorage.key(1);
+    localStorage.removeItem(key2);
+
+    document.getElementById("ListKou1").value="";
+}
+function Wariate(){
+    document.getElementById("group1").value="";
+    document.getElementById("group2").value="";
+    document.getElementById("group3").value="";
+    document.getElementById("group4").value="";
+    document.getElementById("group5").value="";
+
+    if(localStorage.length == 0){
+        alert("中身がありません！");
+    }
+    else {
+//超えるよ〜
+ //高1の配列ゲット.
+
+var jsObj = [];
+
+               var key = localStorage.key(0);
+               var value = localStorage.getItem(key);
+               var jsObj1 = JSON.parse(value);
+
+//高2の配列ゲット.
+
+               var key2 = localStorage.key(1);
+               var value2 = localStorage.getItem(key2);
+               var jsObj2 = JSON.parse(value2);
+         
+
+               var key3 = localStorage.key(2);
+               var value3 = localStorage.getItem(key3);
+               var jsObj3 = JSON.parse(value3);
+
+               var key4 = localStorage.key(3);
+               var value4 = localStorage.getItem(key4);
+               var jsObj4 = JSON.parse(value4);
+
+               var key5 = localStorage.key(4);
+               var value5 = localStorage.getItem(key5);
+               var jsObj5 = JSON.parse(value5);
+         
+
+               var key6 = localStorage.key(5);
+               var value6 = localStorage.getItem(key6);
+               var jsObj6 = JSON.parse(value6);
+
+
+if(jsObj1==null){
+    console.log("成功");
+}
+else{
+for(var l=0 ;l<jsObj1.length;l++){
+    jsObj.push(jsObj1[l]);
+
+}}
+
+if(jsObj2==null){
+    console.log("成功");
+}
+else{
+for(var l=0 ;l<jsObj2.length;l++){
+    jsObj.push(jsObj2[l]);
+
+}}
+
+if(jsObj3==null){
+    console.log("成功");
+}
+else{
+for(var l=0 ;l<jsObj3.length;l++){
+    jsObj.push(jsObj3[l]);
+
+}}
+if(jsObj4==null){
+    console.log("成功");
+}
+else{
+for(var l=0 ;l<jsObj4.length;l++){
+    jsObj.push(jsObj4[l]);
+
+}}
+
+if(jsObj5==null){
+    console.log("成功");
+}
+else{
+for(var l=0 ;l<jsObj5.length;l++){
+    jsObj.push(jsObj5[l]);
+
+}}
+
+if(jsObj6==null){
+    console.log("成功");
+}
+else{
+for(var l=0 ;l<jsObj6.length;l++){
+    jsObj.push(jsObj6[l]);
+
+}}
+
+
+   /*            //
+               var jsObj2 = JSON.parse(value);
+            
+            var obj = JSON.stringify(jsObj2);
+            localStorage.setItem("objArray2",obj);
+            
+                //
+//kokomade
+*/
+
+for(var i = 0; i<jsObj.length;i++){
+    if(i%5 == 0){
+    $("#group1").append(jsObj[i]);
+
+    }
+    else if( i%5 == 1 ){
+
+    $("#group2").append(jsObj[i]);
+
+    }
+        else if( i%5 == 2 ){
+
+        $("#group3").append(jsObj[i]);
+            
+        }
+        else if( i%5 == 3 ){
+
+        $("#group4").append(jsObj[i]);
+            
+        }
+        else if( i%5 == 4 ){
+
+        $("#group5").append(jsObj[i]);
+            
+        }
+    }
+    }
+
+}
+
+  function Shaffule(resArray){
+
+var arr = resArray;
+
+var a = arr.length;
+ 
+while (a) {
+    var j = Math.floor( Math.random() * a );
+    var t = arr[--a];
+    arr[a] = arr[j];
+    arr[j] = t;
+}
+
+
+var obj = JSON.stringify(arr);
+
+    localStorage.setItem("objArray",obj);
+
+}
+
+
+function Input(a){
+
+    document.getElementById('ListKou1').value = a;
+
+}
+//unction InputKou2(b){
+
+  //  document.getElementById('ListKou2').value = b;
+//}
+
+function AddStringToTextarea() { //リストに追加.
+
+
+
+var nowArray = document.getElementById('ListKou1').value.split("\n");  //改行ごとに配列データに入れる.
+
+if(document.getElementById('InputKou1').value == ""){
+
+}else{
+    var UserString = document.getElementById('InputKou1').value;
+   
+console.log(UserString);
+UserString ="●" +"  "+ UserString ;
+    nowArray.push(UserString);
+}
+    var resArray = [];
+   
+var now =nowArray.length;
+    
+    
+    for( var i=0 ; i < now ; i++ ) {
+       if( nowArray[i].length > 0  ) { //文字列の長さが１以上のみ. ←いルカ？.
+          resArray.push( nowArray[i]); //新しく作った配列にぶち込む.
+        
+       }
+    }
+
+
+   
+    
+    document.getElementById('count').value = resArray.length;//カウント.
+    var len =resArray.length ;
+    $('count').append('<p>'+len+'</p>');//カウント後で考える.
+
+    var retString = "";
+    for( var w=0 ; w<resArray.length ; w++ ) {
+       retString += resArray[w] + "\n";
+    }
+    Input(retString);
+
+    Shaffule(resArray);
+    
+}
+
+
+//Kou2
+function Delete2(){
+    var key2 = localStorage.key(1);
+    localStorage.removeItem(key2);
+
+    document.getElementById("ListKou2").value="";
+}
+function Shaffule2(resArray){
+
+var arr = resArray;
+
+var a = arr.length;
+
+while (a) {
+    var j = Math.floor( Math.random() * a );
+    var t = arr[--a];
+    arr[a] = arr[j];
+    arr[j] = t;
+}
+
+
+
+if(localStorage.length > 0){
+var key = localStorage.key(0);
+            var value = localStorage.getItem(key);
+            var jsObj1 = JSON.parse(value);
+}else{
+    var jsObj1 = [];
+}
+            
+
+    var obj = JSON.stringify(arr);
+
+localStorage.setItem("objArrayKou2",obj);
+
+}
+
+function Input2(a){
+
+    document.getElementById('ListKou2').value = a;
+
+}
+function AddStringToTextarea2() { //リストに追加.
+
+
+
+var nowArray = document.getElementById('ListKou2').value.split("\n");  //改行ごとに配列データに入れる.
+if(document.getElementById('InputKou2').value == ""){
+    
+}else{
+    var UserString = document.getElementById('InputKou2').value;
+   
+    UserString ="●" +"  "+ UserString;
+
+    nowArray.push(UserString);
+}
+    var resArray = [];
+   
+var now =nowArray.length;
+    
+    
+    for( var i=0 ; i < now ; i++ ) {
+       if( nowArray[i].length > 0  ) { //文字列の長さが１以上のみ. ←いルカ？.
+          resArray.push( nowArray[i]); //新しく作った配列にぶち込む.
+
+       }
+    }
+
+    var retString = "";
+    for( var w=0 ; w<resArray.length ; w++ ) {
+       retString += resArray[w] + "\n";
+    }
+   Input2(retString);
+
+    Shaffule2(resArray);
+
+    
+
+
+}
+
+
+
+//Kou3.
+function Delete3(){
+    var key3 = localStorage.key(2);
+    localStorage.removeItem(key3);
+
+    document.getElementById("ListKou3").value="";
+}
+function Shaffule3(resArray){
+
+var arr = resArray;
+
+var a = arr.length;
+
+while (a) {
+    var j = Math.floor( Math.random() * a );
+    var t = arr[--a];
+    arr[a] = arr[j];
+    arr[j] = t;
+}
+
+
+if(localStorage.length > 0){
+var key = localStorage.key(0);
+            var value = localStorage.getItem(key);
+            var jsObj1 = JSON.parse(value);
+}else{
+    var jsObj1 = [];
+}
+
+    var obj = JSON.stringify(arr);
+
+localStorage.setItem("objArrayKou3",obj);
+
+}
+
+
+function Input3(a){
+
+    document.getElementById('ListKou3').value = a;
+
+}
+function AddStringToTextarea3() { //リストに追加.
+
+
+
+var nowArray = document.getElementById('ListKou3').value.split("\n");  //改行ごとに配列データに入れる.
+if(document.getElementById('InputKou3').value == ""){
+    
+}else{
+    var UserString = document.getElementById('InputKou3').value;
+   
+    UserString ="●" +"  "+ UserString ;
+    nowArray.push(UserString);
+}
+    var resArray = [];
+   
+var now =nowArray.length;
+    
+    
+    for( var i=0 ; i < now ; i++ ) {
+       if( nowArray[i].length > 0  ) { //文字列の長さが１以上のみ. ←いルカ？.
+          resArray.push( nowArray[i]); //新しく作った配列にぶち込む.
+
+       }
+    }
+
+    var retString = "";
+    for( var w=0 ; w<resArray.length ; w++ ) {
+       retString += resArray[w] + "\n";
+
+
+    }
+
+   Input3(retString);
+
+    Shaffule3(resArray);
+
+    
+
+
+}
+//DAI!
+function Delete4(){
+    var key4 = localStorage.key(3);
+    localStorage.removeItem(key4);
+
+    document.getElementById("ListKou4").value="";
+}
+function Shaffule4(resArray){
+
+var arr = resArray;
+
+var a = arr.length;
+
+while (a) {
+    var j = Math.floor( Math.random() * a );
+    var t = arr[--a];
+    arr[a] = arr[j];
+    arr[j] = t;
+}
+
+
+if(localStorage.length > 0){
+var key = localStorage.key(0);
+            var value = localStorage.getItem(key);
+            var jsObj1 = JSON.parse(value);
+}else{
+    var jsObj1 = [];
+}
+
+    var obj = JSON.stringify(arr);
+
+localStorage.setItem("objArrayKou4",obj);
+
+}
+
+
+function Input4(a){
+
+    document.getElementById('ListKou4').value = a;
+
+}
+function AddStringToTextarea4() { //リストに追加.
+
+
+
+var nowArray = document.getElementById('ListKou4').value.split("\n");  //改行ごとに配列データに入れる.
+if(document.getElementById('InputKou4').value == ""){
+    
+}else{
+    var UserString = document.getElementById('InputKou4').value;
+   
+    UserString ="●" +"  "+ UserString ;
+    nowArray.push(UserString);
+}
+    var resArray = [];
+   
+var now =nowArray.length;
+    
+    
+    for( var i=0 ; i < now ; i++ ) {
+       if( nowArray[i].length > 0  ) { //文字列の長さが１以上のみ. ←いルカ？.
+          resArray.push( nowArray[i]); //新しく作った配列にぶち込む.
+
+       }
+    }
+
+    var retString = "";
+    for( var w=0 ; w<resArray.length ; w++ ) {
+       retString += resArray[w] + "\n";
+
+
+    }
+
+   Input4(retString);
+
+    Shaffule4(resArray);
+
+    
+
+
+}
+//Dai2
+function Delete5(){
+    var key5 = localStorage.key(4);
+    localStorage.removeItem(key5);
+
+    document.getElementById("ListKou5").value="";
+}
+function Shaffule5(resArray){
+
+var arr = resArray;
+
+var a = arr.length;
+
+while (a) {
+    var j = Math.floor( Math.random() * a );
+    var t = arr[--a];
+    arr[a] = arr[j];
+    arr[j] = t;
+}
+
+
+if(localStorage.length > 0){
+var key = localStorage.key(0);
+            var value = localStorage.getItem(key);
+            var jsObj1 = JSON.parse(value);
+}else{
+    var jsObj1 = [];
+}
+
+    var obj = JSON.stringify(arr);
+
+localStorage.setItem("objArrayKou5",obj);
+
+}
+
+
+function Input5(a){
+
+    document.getElementById('ListKou5').value = a;
+
+}
+function AddStringToTextarea5() { //リストに追加.
+
+
+
+var nowArray = document.getElementById('ListKou5').value.split("\n");  //改行ごとに配列データに入れる.
+if(document.getElementById('InputKou5').value == ""){
+    
+}else{
+    var UserString = document.getElementById('InputKou5').value;
+   
+    UserString ="●" +"  "+ UserString ;
+    nowArray.push(UserString);
+}
+    var resArray = [];
+   
+var now =nowArray.length;
+    
+    
+    for( var i=0 ; i < now ; i++ ) {
+       if( nowArray[i].length > 0  ) { //文字列の長さが１以上のみ. ←いルカ？.
+          resArray.push( nowArray[i]); //新しく作った配列にぶち込む.
+
+       }
+    }
+
+    var retString = "";
+    for( var w=0 ; w<resArray.length ; w++ ) {
+       retString += resArray[w] + "\n";
+
+
+    }
+
+   Input5(retString);
+
+    Shaffule5(resArray);
+}
+
+    //Dai3
+    function Delete6(){
+    var key6 = localStorage.key(5);
+    localStorage.removeItem(key6);
+
+    document.getElementById("ListKou6").value="";
+}
+function Shaffule6(resArray){
+
+var arr = resArray;
+
+var a = arr.length;
+
+while (a) {
+    var j = Math.floor( Math.random() * a );
+    var t = arr[--a];
+    arr[a] = arr[j];
+    arr[j] = t;
+}
+
+
+if(localStorage.length > 0){
+var key = localStorage.key(0);
+            var value = localStorage.getItem(key);
+            var jsObj1 = JSON.parse(value);
+}else{
+    var jsObj1 = [];
+}
+
+    var obj = JSON.stringify(arr);
+
+localStorage.setItem("objArrayKou6",obj);
+
+}
+
+
+function Input6(a){
+
+    document.getElementById('ListKou6').value = a;
+
+}
+function AddStringToTextarea6() { //リストに追加.
+
+
+
+var nowArray = document.getElementById('ListKou6').value.split("\n");  //改行ごとに配列データに入れる.
+if(document.getElementById('InputKou6').value == ""){
+    
+}else{
+    var UserString = document.getElementById('InputKou6').value;
+   
+    UserString ="●" +"  "+ UserString ;
+    nowArray.push(UserString);
+}
+    var resArray = [];
+   
+var now =nowArray.length;
+    
+    
+    for( var i=0 ; i < now ; i++ ) {
+       if( nowArray[i].length > 0  ) { //文字列の長さが１以上のみ. ←いルカ？.
+          resArray.push( nowArray[i]); //新しく作った配列にぶち込む.
+
+       }
+    }
+
+    var retString = "";
+    for( var w=0 ; w<resArray.length ; w++ ) {
+       retString += resArray[w] + "\n";
+
+
+    }
+
+   Input6(retString);
+
+    Shaffule6(resArray);
+
+}
+
+
+
+
+        </script>
+        </script>
+
+
+</body>
+
+
+</html>
